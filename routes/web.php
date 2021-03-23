@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Backend\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\OrderController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,3 +20,6 @@ Route::get('/',function (){
 });
 Route::get('/orders/list',[OrderController::class,'list'])->name('order.list');
 
+//category routes
+Route::get('/category/list',[CategoryController::class,'list'])->name('category.list');
+Route::post('category/create',[CategoryController::class,'create'])->name('category.create');
