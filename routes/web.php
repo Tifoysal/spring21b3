@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\OrderController;
 
@@ -23,3 +24,8 @@ Route::get('/orders/list',[OrderController::class,'list'])->name('order.list');
 //category routes
 Route::get('/category/list',[CategoryController::class,'list'])->name('category.list');
 Route::post('category/create',[CategoryController::class,'create'])->name('category.create');
+
+//products routes
+Route::get('/product/list',[ProductController::class,'list'])->name('product.list');
+Route::get('product/create',[ProductController::class,'createForm'])->name('product.create');
+Route::post('product/create',[ProductController::class,'create'])->name('product.create');
