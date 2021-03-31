@@ -17,7 +17,8 @@ use App\Http\Controllers\Backend\OrderController;
 */
 
 Route::get('/',function (){
-   return view('backend.master');
+    $title='Dashboard';
+   return view('backend.master',compact('title'));
 });
 Route::get('/orders/list',[OrderController::class,'list'])->name('order.list');
 

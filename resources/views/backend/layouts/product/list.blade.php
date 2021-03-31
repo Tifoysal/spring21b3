@@ -19,7 +19,7 @@
             <th scope="row">{{$key+1}}</th>
             <td>{{$data->name}}</td>
             <td>{{$data->price}}</td>
-            <td>{{$data->category_id}}</td>
+            <td>{{$data->productCategory->name}}</td>
         </tr>
         @endforeach
         </tbody>
