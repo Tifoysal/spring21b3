@@ -8,6 +8,7 @@
         <thead>
         <tr>
             <th scope="col">#</th>
+            <th scope="col">Image</th>
             <th scope="col">Name</th>
             <th scope="col">Price</th>
             <th scope="col">Category</th>
@@ -17,6 +18,9 @@
         @foreach($products as $key=>$data)
         <tr>
             <th scope="row">{{$key+1}}</th>
+            <td>
+                <img width="150px" src="{{url('/uploads/product/'.$data->image)}}" alt="">
+            </td>
             <td>{{$data->name}}</td>
             <td>{{$data->price}}</td>
             <td>{{$data->productCategory->name}}</td>

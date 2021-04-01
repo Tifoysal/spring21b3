@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <form action="{{route('product.create')}}" method="post">
+    <form action="{{route('product.create')}}" method="post" enctype="multipart/form-data">
         <div class="col-md-6">
             @csrf
             <div class="form-group">
@@ -27,6 +27,11 @@
                 </select>
             </div>
 
+            <div class="form-group">
+                <label for="">Please upload product image</label>
+                <input type="file" name="image" class="form-control">
+            </div>
+            <br>
             <button type="submit" class="btn btn-success">Create</button>
 
         </div>
@@ -34,5 +39,13 @@
 
     </form>
 
-
+    {{--
+    text
+    number
+    passoword
+    email
+    file
+    radio
+    checkbox
+    --}}
 @endsection
