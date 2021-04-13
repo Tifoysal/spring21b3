@@ -5,7 +5,7 @@ use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Frontend\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\OrderController;
-
+use App\Http\Controllers\Frontend\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,10 +18,13 @@ use App\Http\Controllers\Backend\OrderController;
 */
 // website / frontend routes here
 
-Route::get('/',[HomeController::class,'website']);
+Route::get('/',[HomeController::class,'website'])->name('website');
+Route::get('/registration/form',[UserController::class,'registrationForm'])->name('registration.form');
+Route::post('/registration/create',[UserController::class,'register'])->name('register');
 
-
-
+Route::get('/login',[UserController::class,'loginForm'])->name('login.form');
+Route::post('/dologin',[UserController::class,'doLogin'])->name('login');
+Route::get('/logout',[UserController::class,'logout'])->name('logout');
 
 
 //admin route here
